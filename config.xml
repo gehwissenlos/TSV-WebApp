@@ -18,5 +18,11 @@
     </author>
         
     <preference name="permissions" value="none"/>
+        
+    <icon src="36.png" gap:platform="android" gap:density="ldpi" />
+    <icon src="48.png" gap:platform="android" gap:density="mdpi" />
+    <icon src="72.png" gap:platform="android" gap:density="hdpi" />
+    <icon src="144.png" gap:platform="android" gap:density="xhdpi" />
+    <icon src="192.png" gap:platform="android" gap:density="xxhdpi" />
 
 </widget>
