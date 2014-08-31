@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ergebnisse</title>
+		<link rel="stylesheet" type="text/css" href="holo-base-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-kk-light-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-base-widgets.css" />
+		<link rel="stylesheet" type="text/css" href="holo-kk-light-widgets.css" />
+		
+		<script type="text/javascript" src="holo-touch.js"></script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="shortcut icon" sizes="128x128" href="icon_128.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="icon_128.png" />
+        
+        <script type="text/javascript" src="http://www.fussball.de/export.widget.js/-/schluessel/01LI1GGPCS000000VS541L4GVUVA792H"></script>
+	</head>
+	<body>
+        <header class="holo-actionBar">
+            <button class="holo-title holo-up" onclick="window.open('index.html', '_self');">
+                <img src="icon_48.png" />
+                TSV Bodnegg 1927 e.V.
+            </button>
+		</header>
+        <h2>Herren</h2>
+		<div id="Herren1" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            wettbewerb1.setzeWettbewerb('01L9QLACD0000000VV0AG813VSP6T6E0-G');
+            wettbewerb1.zeigeBegegnungen('Herren1');
+        </script>
+
+        <h2>Herren II</h2>
+        <div id="Herren2" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var herren2 = new fussballdeAPI();
+            herren2.setzeWettbewerb('01LA05VCIC000001VV0AG813VSP6T6E0-G');
+            herren2.zeigeBegegnungen('Herren2');
+        </script>
+	</body>
+</html>
+
