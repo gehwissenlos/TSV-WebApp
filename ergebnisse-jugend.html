@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Ergebnisse Jugend</title>
+		<link rel="stylesheet" type="text/css" href="holo-base-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-kk-light-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-base-widgets.css" />
+		<link rel="stylesheet" type="text/css" href="holo-kk-light-widgets.css" />
+		
+		<script type="text/javascript" src="holo-touch.js"></script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="shortcut icon" sizes="128x128" href="icon_128.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="icon_128.png" />
+        
+        <script type="text/javascript" src="http://www.fussball.de/export.widget.js/-/schluessel/01LI1GGPCS000000VS541L4GVUVA792H"></script>
+	</head>
+	<body>
+        <header class="holo-actionBar">
+            <button class="holo-title holo-up" onclick="window.open('index.html', '_self');">
+                <img src="icon_48.png" />
+                TSV Bodnegg 1927 e.V.
+            </button>
+		</header>
+        <h2>U19</h2>
+		<div id="u19" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            u19.setzeWettbewerb('01LH74MB7S000001VV0AG812VSI6B660-G');
+            u19.zeigeBegegnungen('u19');
+        </script>
+
+        <h2>U17</h2>
+		<div id="u17" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            u17.setzeWettbewerb('01LGRAS718000001VV0AG812VUF95A6R-G');
+            u17.zeigeBegegnungen('u17');
+        </script>
+        
+        <h2>U15 Leistungsstaffel</h2>
+		<div id="u15" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            u15.setzeWettbewerb('01LH7DH9MS000001VV0AG812VSI6B660-G');
+            u15.zeigeBegegnungen('u15');
+        </script>
+        
+        <h2>U15 7er</h2>
+		<div id="u14" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            u14.setzeWettbewerb('01LH7FI3AO000001VV0AG812VSI6B660-G');
+            u14.zeigeBegegnungen('u14');
+        </script>
+        
+        <h2>U13</h2>
+		<div id="u13" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            u13.setzeWettbewerb('01LHPV23B0000000VV0AG812VSI6B660-G');
+            u13.zeigeBegegnungen('u13');
+        </script>
+        
+        <h2>U11</h2>
+		<div id="u11" style="text-align:center;"></div>
+        <script type="text/javascript">
+            var wettbewerb1 = new fussballdeAPI();
+            u11.setzeWettbewerb('01LAP8CBR8000001VV0AG812VVHQG9J2-G');
+            u11.zeigeBegegnungen('u11');
+        </script>
+	</body>
+</html>
+
