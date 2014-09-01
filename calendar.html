@@ -16,6 +16,42 @@
 		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
 		<link rel="shortcut icon" sizes="128x128" href="icon_128.png" />
 		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="icon_128.png" />
+        
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript">
+            function dateFromISO8601(isoDateString) {
+              var parts = isoDateString.match(/\d+/g);
+                var wochentag = new Array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
+                //Sun Sep 07 2014 13:00:00 GMT+0200 (Mitteleuropäische Sommerzeit),
+              //var isoTime = Date.UTC(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+              var isoTime = Date.UTC(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
+              var isoDate = new Date(isoTime);
+                var datetime = wochentag[isoDate.getDay()] + ", " + isoDate.toLocaleDateString() + ", " + isoDate.toLocaleTimeString() + " Uhr";
+
+              return datetime;
+            }
+            $(document).ready(function() {
+                var url = "https://www.google.com/calendar/feeds/3m5aul8v2bjounjmgr702nvu2o%40group.calendar.google.com/public/full?alt=json-in-script&callback=?&orderby=starttime&max-results=15&singleevents=true&sortorder=ascending&futureevents=true";
+              $.getJSON(url,
+                function(data) {
+                    for(var i = 0; i < data.feed.entry.length; i += 1){
+                        $('#feedTSV').append('<p><h3>' + data.feed.entry[i].title.$t + '</h3>');
+                        var startTime = (data.feed.entry[i].gd$when[0]) ? dateFromISO8601(data.feed.entry[i].gd$when[0].startTime) : "";
+                        var location = (data.feed.entry[i].gd$where[0]) ? data.feed.entry[i].gd$where[0].valueString : "";
+                        $('#feedTSV').append(startTime + ", " + location + '</p>');}
+                 });
+              var url = "https://www.google.com/calendar/feeds/glomhif468npir2eei4tg0aid0%40group.calendar.google.com/public/full?alt=json-in-script&callback=?&orderby=starttime&max-results=15&singleevents=true&sortorder=ascending&futureevents=true";
+              $.getJSON(url,
+                function(data) {
+                    for(var i = 0; i < data.feed.entry.length; i += 1){
+                        $('#feedSGM').append('<p><h3>' + data.feed.entry[i].title.$t + '</h3>');
+                        var startTime = (data.feed.entry[i].gd$when[0]) ? dateFromISO8601(data.feed.entry[i].gd$when[0].startTime) : "";
+                        var location = (data.feed.entry[i].gd$where[0]) ? data.feed.entry[i].gd$where[0].valueString : "";
+                        $('#feedSGM').append(startTime + ", " + location + '</p>');}
+                 });
+            });
+        </script>
+        
 	</head>
 	<body>
 		<header class="holo-actionBar">
@@ -23,44 +59,11 @@
 				<img src="icon_48.png" />
 				TSV Bodnegg 1927 e.V.
 			</button>
-			<button style="float:right;">Button</button>
 		</header>
-		<p>This is a demo of the KitKat Holo Light theme:</p>
-		<button>Button</button>
-		<button disabled>Disabled</button>
-		<br />
-		<input type="radio" name="radioset1" />
-		<input type="radio" name="radioset1" checked />
-		<input type="radio" name="radioset2" disabled />
-		<input type="radio" name="radioset2" checked disabled />
-		<br />
-		<input type="checkbox" />
-		<input type="checkbox" checked />
-		<input type="checkbox" disabled />
-		<input type="checkbox" checked disabled />
-		<br />
-		<select>
-			<option>Bacon</option>
-			<option>Ipsum</option>
-			<option>Dolor</option>
-			<option>Sit</option>
-			<option>Amet</option>
-		</select>
-		<br /><br />
-		<input type="range" min="0" max="10" value="5" />
-		<br /><br />
-		<input type="range" min="0" max="10" value="5" disabled />
-		<br /><br />
-		<progress value="0.5"></progress>
-		<br /><br />
-		<ul class="holo-list">
-			<li>Item 1</li>
-			<li>Item 2</li>
-			<li><button style="width: 100%; width: calc(100% + 32px);">Button 1</button></li>
-			<li><button style="width: 100%; width: calc(100% + 32px);">Button 2</button></li>
-		</ul>
-		<p>Bacon ipsum dolor sit amet incididunt cillum consectetur, prosciutto venison esse voluptate. Tenderloin pariatur elit, meatball bresaola in ad ullamco aute biltong bacon. Dolor ground round boudin cow. Biltong minim esse, ground round veniam anim filet mignon mollit short loin tri-tip ad. Ham hock cupidatat irure, pastrami occaecat flank deserunt beef ribeye ex ad. Dolore cillum sirloin, pork tri-tip excepteur quis tenderloin ham.</p>
-		<footer class="holo-actionBar"><button onclick="window.open('index.html', '_self');" style="width: 100%; padding-left: 0; padding-right: 0;">Switch to index</button></footer>
+        <h2>Spiele der Herren, U13 und U11</h2>
+        <div id="feedTSV"></div>
+        <h2>Spiele der U19, U17 und U15</h2>
+        <div id="feedSGM"></div>
 	</body>
 </html>
 
