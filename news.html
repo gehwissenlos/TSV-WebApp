@@ -19,12 +19,21 @@
         
         <script src="jquery.min.js"></script>
         <script type="text/javascript">
+            //Ladeanzeige
             $(document).bind("ajaxSend", function(){
                $("#loading").show();
              }).bind("ajaxComplete", function(){
                $("#loading").hide();
              });
             
+            //Links in Systembrowser öffnen
+            $('a[target=_blank]').on('click', function(e) {
+                e.preventDefault();
+                window.open($(this).attr('href'), '_system');
+                return false;
+            });
+            
+            //JSON Feed laden und anhängen
             $(document).ready(function() {
               var url = "http://www.tsv-bodnegg.de/feed/json?callback=?";
               $.getJSON(url,
