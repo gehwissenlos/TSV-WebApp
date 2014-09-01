@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Kalender</title>
+		<link rel="stylesheet" type="text/css" href="holo-base-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-kk-light-elements.css" />
+		<link rel="stylesheet" type="text/css" href="holo-base-widgets.css" />
+		<link rel="stylesheet" type="text/css" href="holo-kk-light-widgets.css" />
+		
+		<script type="text/javascript" src="holo-touch.js"></script>
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no" />
+		
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+		<link rel="shortcut icon" sizes="128x128" href="icon_128.png" />
+		<link rel="apple-touch-icon-precomposed" sizes="128x128" href="icon_128.png" />
+        
+        <script src="jquery.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function() {
+              var url = "http://www.tsv-bodnegg.de/feed/json?callback=?";
+              $.getJSON(url,
+                function(data) {
+                    for(var i = 0; i < data.length; i += 1){
+                        $('#feed').append('<p><h3>' + data[i].title + '</h3>');
+                        $('#feed').append(data[i].excerpt + '</p>');}
+                 });
+            });
+        </script>
+	</head>
+	<body>
+		<header class="holo-actionBar">
+			<button class="holo-title holo-up" onclick="window.open('index.html', '_self');">
+				<img src="icon_48.png" />
+				TSV Bodnegg 1927 e.V.
+			</button>
+			<button style="float:right;">Button</button>
+		</header>
+        <div id="feed">
+        </div>
+	</body>
+</html>
+
