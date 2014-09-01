@@ -19,6 +19,11 @@
         
         <script src="jquery.min.js"></script>
         <script type="text/javascript">
+            $(document).bind("ajaxSend", function(){
+               $("#loading").show();
+             }).bind("ajaxComplete", function(){
+               $("#loading").hide();
+             });
             function dateFromISO8601(isoDateString) {
               var parts = isoDateString.match(/\d+/g);
                 var wochentag = new Array("Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag");
