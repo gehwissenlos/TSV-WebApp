@@ -3,14 +3,14 @@
         xmlns:gap   = "http://phonegap.com/ns/1.0"
         id          = "de.tsvbodnegg.app"
         versionCode = "1" 
-        version     = "0.0.1" >
+        version     = "0.1.0" >
 
     <!-- versionCode is optional and Android only -->
 
     <name>TSV Bodnegg</name>
 
     <description>
-        An app for the club TSV Bodnegg. 
+        Nachrichten, Ergebnisse und Termine vom TSV Bodnegg. 
     </description>
 
     <author href="http://www.tsv-bodnegg.de" email="webmaster@tsv-bodnegg.de">
