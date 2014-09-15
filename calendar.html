@@ -31,7 +31,7 @@
               //var isoTime = Date.UTC(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
               var isoTime = Date.UTC(parts[0], parts[1] - 1, parts[2], parts[3], parts[4], parts[5]);
               var isoDate = new Date(isoTime);
-                var datetime = wochentag[isoDate.getDay()] + ", " + isoDate.toLocaleDateString() + ", " + isoDate.toLocaleTimeString() + " Uhr";
+                var datetime = wochentag[isoDate.getDay()] + ", " + isoDate.toLocaleDateString() + ", " + parts[3] + ":" + parts[4] + " Uhr";
 
               return datetime;
             }
